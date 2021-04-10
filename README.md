@@ -56,3 +56,11 @@ ex :
 gcc vos_fichiers.c list.c 
 ```
 
+
+# todo : 
+- [x] base
+- [ ] l'autre sens 
+- [ ] des fonctions sympatiques et utiles
+- [x] boire un café
+- [x] manger
+- [ ] dormir
