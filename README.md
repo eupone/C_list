@@ -21,9 +21,9 @@ List *ma_liste = init("ce que vous voulez")
 | ------ | ------ | ---- | ------ |
 | init | initité la liste | le premier element |List |
 | insert | insérer un element | la liste , la position , l'element |  |
-| del | supprimé un element | la liste , la position |  |
-| ret | retourné un element | la liste , la position | void* |
-| pop | retourné un elment et le supprimer de la liste | la liste , la position | void* |
+| del | supprime un element | la liste , la position |  |
+| ret | retourne un element | la liste , la position | void* |
+| pop | retourne un elment et le supprimer de la liste | la liste , la position | void* |
 | add | ajouter un element à la fin de la liste | la liste , l'element |  |
 
 #### les prototypes :
