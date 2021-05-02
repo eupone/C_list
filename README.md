@@ -1,3 +1,4 @@
+this source-code is under Apache License 2.0 , read LICENSE for more information
 # C-list
 ## faites des listes en C !
 
