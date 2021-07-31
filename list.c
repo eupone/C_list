@@ -1,13 +1,13 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "list.h"
 
 
 
 List *init(void *first_elem_){
 
-        List *the_list = malloc( sizeof(List) );
-        Element *first_elem = malloc( sizeof(Element) );
+        List *the_list = (List*)malloc( sizeof(List) );
+        Element *first_elem = (Element*)malloc( sizeof(Element) );
 
         if (the_list == NULL || first_elem == NULL)
         {
@@ -42,7 +42,7 @@ void add(List *liste,void *element){
     }
 
     Element *actual_last_elem = liste -> last_elem ;
-    Element *new_elem = malloc( sizeof(Element) ); 
+    Element *new_elem = (Element*)malloc( sizeof(Element) ); 
 
     if( new_elem == NULL ){
         printf("no memory or error when creating the element\n");
@@ -79,7 +79,7 @@ void fdel(List *liste,int pos){
 
         if (pos == 0){ //if pos at the first elem
 
-            Element *aft = pos_elem -> after;
+            Element *aft = (Element*) pos_elem -> after;
             aft -> before = NULL;
 
             free(pos_elem);
@@ -91,7 +91,7 @@ void fdel(List *liste,int pos){
         }else if (pos == (liste-> nbr_element - 1) ){ //if element is the last of the list 
             
             Element *pos_elem =  liste -> last_elem;
-            Element *bft = pos_elem -> before;
+            Element *bft = (Element*) pos_elem -> before;
 
             bft -> after = NULL;
             free(pos_elem);
@@ -104,7 +104,7 @@ void fdel(List *liste,int pos){
             for (int i=0 ; i < pos ;i++){
 
                 if (pos_elem -> after != NULL){
-                    pos_elem = pos_elem -> after;
+                    pos_elem = (Element*) pos_elem -> after;
                      
                 }else{
                     pos_elem = NULL;
@@ -118,8 +118,8 @@ void fdel(List *liste,int pos){
 
 
 
-            Element *aft = pos_elem -> after ;
-            Element *bft = pos_elem -> before;
+            Element *aft = (Element*) pos_elem -> after ;
+            Element *bft = (Element*) pos_elem -> before;
 
 
             aft -> before = bft;
@@ -185,7 +185,7 @@ void rdel(List *liste,int pos){
 
         if (pos == 0){ //if pos at the first elem
 
-            Element *aft = pos_elem -> after;
+            Element *aft =(Element*) pos_elem -> after;
             aft -> before = NULL;
 
             free(pos_elem);
@@ -197,7 +197,7 @@ void rdel(List *liste,int pos){
         }else if (pos == (liste-> nbr_element - 1) ){ //if element is the last of the list 
             
             Element *pos_elem =  liste -> last_elem;
-            Element *bft = pos_elem -> before;
+            Element *bft = (Element*) pos_elem -> before;
 
             bft -> after = NULL;
             free(pos_elem);
@@ -210,7 +210,7 @@ void rdel(List *liste,int pos){
             for (int i=0 ; i < pos ;i++){
 
                 if (pos_elem -> after != NULL){
-                    pos_elem = pos_elem -> after;
+                    pos_elem = (Element*) pos_elem -> after;
                      
                 }else{
                     pos_elem = NULL;
@@ -224,8 +224,8 @@ void rdel(List *liste,int pos){
 
 
 
-            Element *aft = pos_elem -> after ;
-            Element *bft = pos_elem -> before;
+            Element *aft = (Element*) pos_elem -> after ;
+            Element *bft = (Element*) pos_elem -> before;
 
 
             aft -> before = bft;
@@ -273,7 +273,7 @@ void finsert(List *liste,int pos,void *element){
         if (pos == 0){ //if pos at the first elem
             
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -295,7 +295,7 @@ void finsert(List *liste,int pos,void *element){
 
             Element *bft =  liste -> last_elem;
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -318,7 +318,7 @@ void finsert(List *liste,int pos,void *element){
             for (int i=0 ; i < pos-1 ;i++){
 
                 if (pos_elem -> after != NULL){
-                    pos_elem = pos_elem -> after;
+                    pos_elem = (Element*) pos_elem -> after;
                      
                 }else{
                     pos_elem = NULL;
@@ -331,7 +331,7 @@ void finsert(List *liste,int pos,void *element){
             }
 
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -340,7 +340,7 @@ void finsert(List *liste,int pos,void *element){
 
 
 
-            Element *aft = pos_elem -> after ;
+            Element *aft = (Element*) pos_elem -> after ;
             Element *bft = pos_elem;
 
             new_elem -> elem = element;
@@ -408,7 +408,7 @@ void rinsert(List *liste,int pos,void *element){
         if (pos == 0){ //if pos at the first elem
             
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -430,7 +430,7 @@ void rinsert(List *liste,int pos,void *element){
 
             Element *bft =  liste -> last_elem;
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -453,7 +453,7 @@ void rinsert(List *liste,int pos,void *element){
             for (int i=0 ; i < pos ;i++){
 
                 if (pos_elem -> before != NULL){
-                    pos_elem = pos_elem -> before;
+                    pos_elem = (Element*) pos_elem -> before;
 
                      
                 }else{
@@ -467,7 +467,7 @@ void rinsert(List *liste,int pos,void *element){
             }
 
 
-            Element *new_elem = malloc( sizeof(Element) );
+            Element *new_elem = (Element*)malloc( sizeof(Element) );
 
             if( new_elem == NULL ){
                  printf("no memory or error when creating the element\n");
@@ -476,7 +476,7 @@ void rinsert(List *liste,int pos,void *element){
 
 
 
-            Element *aft = pos_elem -> after ;
+            Element *aft =(Element*) pos_elem -> after ;
             Element *bft = pos_elem;
 
             new_elem -> elem = element;
@@ -526,7 +526,7 @@ void *fret(List *liste , int pos){
     if (pos >= 0 && pos < liste->nbr_element ){
         for (int i=0 ; i<pos ;i++){
             if (pos_elem -> after != NULL){
-                pos_elem = pos_elem -> after;
+                pos_elem = (Element*) pos_elem -> after;
             }
             else {
                 return NULL;
@@ -586,7 +586,7 @@ void *rret(List *liste , int pos){
         Element *pos_elem = liste->last_elem;
         for (int i=0 ; i < pos ;i++){
             if (pos_elem -> before != NULL){
-                pos_elem = pos_elem -> before;
+                pos_elem = (Element*) pos_elem -> before;
             }
             else {
                 return NULL;
@@ -645,3 +645,5 @@ void *rpop(List *liste , int pos){
     return cast;
 
 }
+
+

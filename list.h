@@ -1,6 +1,10 @@
 #ifndef LIST_YEET
 #define LIST_YEET
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 
 // list structure
@@ -40,4 +44,8 @@ void *rpop(List *liste , int pos);	// pop an element by parsing in forward
 void *pop(List *liste , int pos); 	// pop an element by parsing in auto
 void *fpop(List *liste , int pos);	// pop an element by parsing in reverse
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
