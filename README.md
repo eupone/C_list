@@ -7,6 +7,7 @@ C-list est un moyen de faire des listes en C
 - doublement chainé
 - facile à utiliser
 - bien pensée
+- marche aussi en c++ !!!!!
 
 
 # comment l'utiliser  :
